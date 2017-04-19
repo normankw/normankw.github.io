@@ -1,0 +1,208 @@
+<body>
+
+<h2>Montytable game come and play</h2>
+Each and everyone of you need to play in order to continue to the next level! Win 3/5 or 5 games straight
+<p id="monty">Yo you will come to play cards if you want dealing with the game </p><br>
+<p>When you get a goat you Lose</p>
+<p>When you get a car you Win</p>
+	<button onclick="on()">Card One</button>
+    <button onclick="tw()">Card Two</button>
+	<button onclick="th()">Card Three</button><br><br>
+	<!--<button onclick="4()">card Four</button>
+    <button onclick="5()">card Five</button><br><br>-->
+
+    <button onclick="changecard()">Change Card!</button><br>
+    <button onclick="keepcard()">Keep Card!</button><br>
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+
+function deck(){
+var cardnumber = Math.floor(Math.random()*3)+1;
+	if(cardnumber==one){document.getElementById("monty").innerHTML=' you win'}
+	if(cardnumber==two){document.getElementById("monty").innerHTML=' you win'}
+	if(cardnumber==thre){document.getElementById("monty").innerHTML=' you win'}
+}
+
+function on(){
+if(firstpick == true){
+firstpick = false;
+pick = one;
+		if(thre == card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 1.  There is a goat behind card 3!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 1.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}
+//this will see if you have the first card is correct going in card
+function tw(){
+if(firstpick==true){
+firstpick=false;
+pick = two;
+
+		if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 2.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 2.  There is a goat behind card 3!  Do you want to switch doors?</b>";
+			}
+		}
+	}	
+
+function th(){
+if(firstpick==true){
+firstpick=false;
+pick = thre;
+	if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}
+	function changecard(){
+	if (pick == "goat") {
+//win		if(th==staypick)
+	document.getElementById("monty").innerHTML="<br>You win </b>"
+} else {
+//lose
+	document.getElementById("monty").innerHTML="<br>You Lose </b>"
+	}
+}
+function keepcard(){
+			if (pick == "car") {
+//win		if(th==staypick)
+	document.getElementById("monty").innerHTML="<br>You win </b>"
+} else {
+//lose
+	document.getElementById("monty").innerHTML="<br>You Lose </b>"
+	}
+}
+</h4></code></pre></div>
+	
+<a href='../index.html'>back to index</a>
+
+<script>
+var firstpick=true;
+//the pick will revil the goat
+//secondpick=true;
+// the pick will revil the second goat
+var card=["goat",'car'];
+var one=card[0];
+var two=card[0];
+var thre=card[0];
+var pick;
+deck()
+function deck(){
+var cardnumber = Math.floor(Math.random()*3)+1;
+	if(cardnumber==one){document.getElementById("monty").innerHTML=' you win'}
+	if(cardnumber==two){document.getElementById("monty").innerHTML=' you win'}
+	if(cardnumber==thre){document.getElementById("monty").innerHTML=' you win'}
+}
+
+function on(){
+if(firstpick == true){
+firstpick = false;
+pick = one;
+		if(thre == card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 1.  There is a goat behind card 3!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 1.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}
+//this will see if you have the first card is correct going in card
+function tw(){
+if(firstpick==true){
+firstpick=false;
+pick = two;
+
+		if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 2.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 2.  There is a goat behind card 3!  Do you want to switch doors?</b>";
+			}
+		}
+	}	
+
+function th(){
+if(firstpick==true){
+firstpick=false;
+pick = thre;
+	if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}
+
+/*function 4(){
+if(firstpick==true){
+firstpick=false;
+pick = card1;
+
+	if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}
+function 5(){
+if(){}
+}if(firstpick==true){
+firstpick=false;
+pick = card1;
+
+	if(one==card[0]){
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 1!  Do you want to switch doors?</b>";
+			} else{
+			document.getElementById("monty").innerHTML = "<b>You picked card 3.  There is a goat behind card 2!  Do you want to switch doors?</b>";
+			}
+		}
+	}*/
+
+
+function changecard(){
+	if (pick == "goat") {
+//win		if(th==staypick)
+	document.getElementById("monty").innerHTML="<br>You win </b>"
+} else {
+//lose
+	document.getElementById("monty").innerHTML="<br>You Lose </b>"
+	}
+}
+		/*document.getElementById("monty").innerHTML="<br>You change to a'one' </b>"
+		else{ 
+		document.getElementById("monty").innerHTML="<br>You change to a'two' </b>"
+	}
+}
+		if(tw==change){
+			document.getElementById("monty").innerHTML="<br>You change to a 'ne'</b>"
+			else{
+			document.getElementById("monty").innerHTML="<br>You change to a 'thre'</b>"
+	}
+}
+		if(on==change){		
+			document.getElementById("monty").innerHTML="<br>You change to a'thre' </b>"
+			else{ 
+			document.getElementById("monty").innerHTML="<br>You change to a'two' </b>"
+		}
+	}*/
+
+function keepcard(){
+			if (pick == "car") {
+//win		if(th==staypick)
+	document.getElementById("monty").innerHTML="<br>You win </b>"
+} else {
+//lose
+	document.getElementById("monty").innerHTML="<br>You Lose </b>"
+	}
+}
+
+</script>
+</body>

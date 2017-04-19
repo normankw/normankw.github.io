@@ -1,0 +1,60 @@
+<html>
+<script>
+function isPalindrome(x) {  //start
+  if(typeof x=="number")return 'error';//getting the number to show 
+   if(-1==x)return 'error';//checks for a -1  
+  if(" "==x)return 'error';// checks for spaces`
+  if(','==x)return 'error';// checks for ',' 
+  x = x.replace(/\s/g,'');//to replace the spaces
+	x = x.replace(",",""); // get rid of , and spaces 
+  for(var k = 0; k <= x.length;k++) if (x[x.length-k-1] != x[k]) return false;// goes throw the words and checks see if it is right
+  return true;
+  
+  
+}
+
+
+document.write("<h1>Checking all test cases!</h1>")
+check("maneater", false);
+check("nanimon", false);
+check("radar",true)
+check("bob",true);
+check(" ", "error");
+check(-1,"error");
+check("15351",true);
+check("153351",true);
+check(15351,"error")
+check("a man a plan a canal, panama", true);
+
+
+
+function check(x,y) {
+  if (isPalindrome(x) == y) {
+    document.write("Passed!  Put in <b>" + x + "</b> and got<b> " + y + "</b>");
+  } else {
+    document.write("Failed! Put in <b>" + x + "</b> and expected <b>" + y + "</b> but got <b>" + isPalindrome(x) + "</b> instead");
+  }  
+  document.write("<br>");
+}
+ // loop for the print out to until loop is over
+
+
+
+</script>
+<a href='../index.html'>back to index</a>
+function isPalindrome(x) {  //start
+  if(typeof x=="number")return 'error';//getting the number to show 
+   if(-1==x)return 'error';//to show 
+  if(" "==x)return 'error';// does nothing 
+  if(','==x)return 'error';//does nothing
+  x = x.replace(/\s/g,'');//to replace
+	x = x.replace(",",""); // get rid of , and spaces 
+  for(var k = 0; k <= x.length;k++) if (x[x.length-k-1] != x[k]) return false;// goes throw the words and shapes them in a di
+  return true;
+  
+  
+}
+
+</h4></code></pre></div>
+<a href='../index.html'>back to index</a>
+</html>

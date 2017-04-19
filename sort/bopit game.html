@@ -1,0 +1,212 @@
+<html>
+<h2>BopIT</h2>
+If the timer gets to 0 Game Over.
+<body>
+    <p id="scorer">0</p>
+    <p id='highscorer'>0</p>
+     <p id='chooser'></p>
+	<p id='timerleft'>10</p>
+   
+
+    <button onclick="start()">start game</button>
+
+    <button onclick="twist()">twist</button>
+    <button onclick="bopit()">Bopit</button>
+    <button onclick="pull()">pull</button>
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+
+    function start() {
+        if (!isplaying) {
+            isplaying = true;
+            timer = setInterval(function() {
+                timeleft--;
+                timerleft.innerHTML = timeleft;
+                if (timeleft <= 0) {
+                    gameover();
+                }
+            }, 1000);
+		pickchoose();
+        }
+    }
+    function pickchoose() {
+        var dice = Math.floor(Math.random() * 3) + 1;
+        if (1 == dice) {
+            choose = "twist";
+            chooser.innerHTML = choose;
+        } else if (2 == dice) {
+            choose = 'bopit';
+            chooser.innerHTML = choose;
+        } else if (dice == 3) {
+            choose = 'pull';
+            chooser.innerHTML = choose;
+        }
+    }
+
+    function resetimer() {
+        timeleft = 10;
+        clearInterval(timer);
+        timer = setInterval(function() {
+            timeleft--;
+            timerleft.innerHTML = timeleft;
+            if (timeleft <= 0) {
+                gameover();
+            }
+        }, 1000);
+
+    }
+
+    function twist() {
+        if (isplaying) {
+            if (choose == 'twist') {
+                score += 5;
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function bopit() {
+        if (isplaying) {
+            if (choose == 'bopit') {
+                score += 5;
+
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function pull() {
+        if (isplaying) {
+            if (choose == 'pull') {
+                score += 5;
+
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function gameover() {
+        clearInterval(timer);
+        alert("Game Over.");
+    }
+</h4></code></pre></div>
+</body>
+
+
+<script>
+    var score = 0;
+    var highscore = 0;
+    var timeleft = 10;
+    var isplaying = false;
+    var timer;
+    var choose='';
+
+    function start() {
+        if (!isplaying) {
+            isplaying = true;
+            timer = setInterval(function() {
+                timeleft--;
+                timerleft.innerHTML = timeleft;
+                if (timeleft <= 0) {
+                    gameover();
+                }
+            }, 1000);
+		pickchoose();
+        }
+    }
+    /*function playing(){
+    if(isplaying==500){
+    	if(twist==1){
+    	timeleft-=1;
+    	}
+    }*/
+    function pickchoose() {
+        var dice = Math.floor(Math.random() * 3) + 1;
+        if (1 == dice) {
+            choose = "twist";
+            chooser.innerHTML = choose;
+        } else if (2 == dice) {
+            choose = 'bopit';
+            chooser.innerHTML = choose;
+        } else if (dice == 3) {
+            choose = 'pull';
+            chooser.innerHTML = choose;
+        }
+    }
+
+    function resetimer() {
+        timeleft = 10;
+        clearInterval(timer);
+        timer = setInterval(function() {
+            timeleft--;
+            timerleft.innerHTML = timeleft;
+            if (timeleft <= 0) {
+                gameover();
+            }
+        }, 1000);
+
+    }
+
+    function twist() {
+        if (isplaying) {
+            if (choose == 'twist') {
+                score += 5;
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function bopit() {
+        if (isplaying) {
+            if (choose == 'bopit') {
+                score += 5;
+
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function pull() {
+        if (isplaying) {
+            if (choose == 'pull') {
+                score += 5;
+
+                resetimer();
+                pickchoose();
+                scorer.innerHTML = score;
+            } else {
+                gameover()
+            }
+        }
+    }
+
+    function gameover() {
+        clearInterval(timer);
+        alert("Game Over.");
+    }
+</script>
+
+</html>

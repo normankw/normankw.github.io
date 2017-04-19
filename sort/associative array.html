@@ -1,0 +1,57 @@
+<html>
+<h1>Associative array</h1>
+
+<p>
+
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+function countDuplicates(list) {
+  // using an associative array
+  var keyValues = {};
+  list.forEach(function(n) {
+    if(keyValues[n]) {
+         keyValues[n]++;
+    } else {
+         keyValues[n] = 1;
+    }
+  }
+)  
+  return keyValues;
+  
+}
+
+</h4></code></pre></div>
+ <br>
+ <a href='../index.html'>back to index</a><br><br>
+ Original: -5, 0, 3, 6, 3, 8, 34, 2, 7, 8, 3<br>
+
+<script>
+function countDuplicates(list) {
+  // using an associative array
+  var keyValues = {};
+  list.forEach(function(n) {
+    if(keyValues[n]) {
+         keyValues[n]++;
+    } else {
+         keyValues[n] = 1;
+    }
+  }
+)
+  
+  
+  return keyValues;
+  
+}
+
+
+var numberArray = [-5, 0, 3, 6, 3, 8, 34, 2, 7, 8, 3];
+var results = countDuplicates(numberArray);
+Object.keys(results).forEach(function (key) {
+
+  document.write("<p>" + key + ": " + results[key] + "</p>");
+  
+})
+</script>

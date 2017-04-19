@@ -1,0 +1,26 @@
+body {
+  padding-top: 40px;
+}
+
+.col-sm-8 {
+  background: #999;
+}
+
+.other {
+  background: #88B040;
+}
+
+.other2 {
+  background: #777;
+}
+
+.p {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.p a {
+  text-decoration: underline;
+  color: blue;
+}
+

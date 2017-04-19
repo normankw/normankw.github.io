@@ -1,0 +1,124 @@
+<html>
+<h1>bubbleSort</h1>
+
+<p>
+
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+function bubbleSort(x) {
+	var weSwapped = true;
+	while (weSwapped) {
+		weSwapped = false;
+		for (var i = 0; i < x.length - 1; i++) {
+			if (x[i+1] < x[i]) {
+				var temp = x[i+1];
+				x[i+1] = x[i];
+				x[i] = temp;
+				weSwapped = true;
+			}
+		}
+	}
+	return x;
+}
+
+while(change){
+  change = false;
+for(var c=0; c < order.length; c++){
+  if(order[c].toUpperCase() > order[c+1].toUpperCase() ){
+  var change = true;
+  var moveup = order[c+1];
+    order[c+1] = order[c];
+    order[c] = moveup;
+		}
+	}
+}
+ </h4></code></pre></div>
+ <br>
+<a href='../index.html'>back to index</a><br><br>
+ 
+ Original: 5,10,4,8,2,3
+ <br>
+ Original: ab,ac,aab,a,aac,aaab,Ab,ABA,COOKIE
+ <br>
+<script>
+
+var unsorted = [5,10,4,8,2,3];  //you can put any numbers here.
+
+var sorted = bubbleSort(unsorted);
+
+document.write("Sorted: ");
+for (var i = 0; i < unsorted.length; i++) { // rotate the numbers
+	toPage(unsorted[i]);
+}
+
+
+var order=['ab','ac','aab','a','aac','aaab','Ab','ABA',"COOKIE"];
+var change = true;
+
+document.write("Sorted: ");
+
+while(change){
+  change = false;
+for(var c=0; c < order.length -1; c++){
+  if(order[c].toUpperCase() > order[c+1].toUpperCase() ){
+  var change = true;
+  var moveup = order[c+1];
+    order[c+1] = order[c];
+    order[c] = moveup;
+		}
+	}
+}
+
+  document.write(order);
+
+
+function toPage(sentence) {
+	document.write(sentence + " ");
+}
+
+function bubbleSort(x) {
+	var weSwapped = true;
+	while (weSwapped) {
+		weSwapped = false;
+		for (var i = 0; i < x.length - 1; i++) {
+			if (x[i+1] < x[i]) {
+				var temp = x[i+1];
+				x[i+1] = x[i];
+				x[i] = temp;
+				weSwapped = true;
+			}
+		}
+	}
+	return x;
+}
+
+//Same as above, it just types out what it does for you to read.
+function noisybubbleSort(x) {
+	var weSwapped = true;
+	while (weSwapped) {
+		toPage("We changed something or this is or first time running, so we loop.");
+		weSwapped = false;
+		for (var i = 0; i < x.length - 1; i++) {
+			toPage("Checking if " + x[i+1] + " is less then " + x[i]);
+			if (x[i+1] < x[i]) {
+				toPage("It is!  We swapped them.");
+				var temp = x[i+1];
+				x[i+1] = x[i];
+				x[i] = temp;
+				weSwapped = true;
+			}
+			for (var j = 0; j < unsorted.length; j++) {
+				document.write(unsorted[j] + ",");
+			}
+			document.write("<br>");
+		}
+	}
+}
+
+
+
+
+</script>

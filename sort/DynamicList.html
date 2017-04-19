@@ -1,0 +1,110 @@
+<html>
+<body>
+    <p>Click the buttons to add food to your list.</p>
+	<!- This is where I'm going to put out the buttons I made in code -->
+	<p id="makePage"></p>
+	MY LIST : 
+	<!- this is where the list will get printed out -->
+	<p id="theList">ram</p>
+	<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+	<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+	var pageBuilder = "";
+	var groceries= [][]+;
+	var prices = [];
+	
+	//This is a function that will add a button to the page when it runs
+	// addButton("Name of your Food", #.##) -- use the Apple as your example!
+addButton("ram", 12.99);
+addButton("16 gb flash drive",15.00);
+addButton("500gb hard drive",49.99);
+addButton("prigos",1.99);
+addButton("wifi stick",10.00);
+addButton("old 2005 hp laptop",230.00);
+	
+	//Once every AddButton was ran, we build the page!
+	document.getElementById("makePage").innerHTML = pageBuilder;
+	
+	//This button will -automatically- write out a button to our page to save time!
+	// Example of a button  <button onclick="myFunction()">Try it</button>
+	//This just does the same thing your Copy+Pasting would do, but fills in the blanks automatically
+	
+	function addButton(foodname, foodprice) {
+		pageBuilder += 
+		'<button onclick="addFood(\''+foodname+'\', ' + foodprice + ')">' +
+		foodname + " : " + foodprice +
+		'</button><br>'
+	}
+	
+	//This is almost the same as your normal groceries code, it runs everytime they add an item to the list.
+	function addFood(foodname, foodprice) {
+	    var output = "";
+		// .push -ADDS- an item to your array!  Arrays can grow as big as you need them to!
+		groceries.push(foodname);
+		prices.push(foodprice);
+
+		for (var i = 0; i < groceries.length; i++) {
+			output += groceries[i] + "<br>"; }
+			
+		var bill = 0;
+		for (var i = 0; i < prices.length; i++) {
+			bill += prices[i]; }
+		
+		bill = bill.toFixed(2);
+		output += "Total cost is : $" + bill;
+		document.getElementById("theList").innerHTML = output;
+	}
+	</h4></code></pre></div>
+<a href='../index.html'>back to index</a>
+
+<script>
+	var pageBuilder = "";
+	var groceries= [][]+;
+	var prices = [];
+	
+	//This is a function that will add a button to the page when it runs
+	// addButton("Name of your Food", #.##) -- use the Apple as your example!
+addButton("ram", 12.99);
+addButton("16 gb flash drive",15.00);
+addButton("500gb hard drive",49.99);
+addButton("prigos",1.99);
+addButton("wifi stick",10.00);
+addButton("old 2005 hp laptop",230.00);
+	
+	//Once every AddButton was ran, we build the page!
+	document.getElementById("makePage").innerHTML = pageBuilder;
+	
+	//This button will -automatically- write out a button to our page to save time!
+	// Example of a button  <button onclick="myFunction()">Try it</button>
+	//This just does the same thing your Copy+Pasting would do, but fills in the blanks automatically
+	
+	function addButton(foodname, foodprice) {
+		pageBuilder += 
+		'<button onclick="addFood(\''+foodname+'\', ' + foodprice + ')">' +
+		foodname + " : " + foodprice +
+		'</button><br>'
+	}
+	
+	//This is almost the same as your normal groceries code, it runs everytime they add an item to the list.
+	function addFood(foodname, foodprice) {
+	    var output = "";
+		// .push -ADDS- an item to your array!  Arrays can grow as big as you need them to!
+		groceries.push(foodname);
+		prices.push(foodprice);
+
+		for (var i = 0; i < groceries.length; i++) {
+			output += groceries[i] + "<br>"; }
+			
+		var bill = 0;
+		for (var i = 0; i < prices.length; i++) {
+			bill += prices[i]; }
+		
+		bill = bill.toFixed(2);
+		output += "Total cost is : $" + bill;
+		document.getElementById("theList").innerHTML = output;
+	}
+</script>
+</body>
+</html>

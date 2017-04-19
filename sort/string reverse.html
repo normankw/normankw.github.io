@@ -1,0 +1,57 @@
+<html>
+<h1>String Reverse Sentence</h1>
+this program reverses the s
+<p>
+
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+function words(word){
+var wordlength=0
+var wordstart=0
+//grapping the var to loop to sentences in reverse 
+for(var e=0;e<word.length;e++){
+	if(' '==word[e]){
+		theWords.push(word.substr(wordstart,wordlength))		
+		wordstart = e+1
+		wordlength = 0;
+		}//begin and rest
+		else{
+		wordlength++
+		} 
+	}
+}
+ </h4></code></pre></div>
+ <br>
+ <a href='../index.html'>back to index</a><br><br>
+ Original String is "The cat ran downstairs to get food."<br>
+After Reverse :<br>
+
+<script>
+var kiss="The cat ran downstairs to get food .";
+var theWords = [];
+words(kiss+' ');
+for (var i = theWords.length - 1; i >= 0; i--) {//this runs the reverse
+	document.write(theWords[i] + " " );
+} // loop for the print out to until loop is over
+
+function words(word){
+var wordlength=0
+var wordstart=0
+//grapping the var to loop to sentences in reverse 
+for(var e=0;e<word.length;e++){
+	if(' '==word[e]){
+		theWords.push(word.substr(wordstart,wordlength))		
+		wordstart = e+1
+		wordlength = 0;
+		}//begin and rest
+		else{
+		wordlength++
+		} 
+	}
+}
+ 
+</script>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>TD XRay template</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<legend style="border: 3px black solid;margin-left: 1em; padding: 0.2em 0.8em "> <strong> <font size="6"> <center> THE XRAY SERIES </center> </strong> </font> </legend>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+    
+
+      <div class="row">
+             
+          <canvas id="canvas" class="img-responsive"></canvas> </br> </br>
+          <center><button id="leftHorbtn" class="btn btn-primary">Rotate Left</button> <button id="rightHorbtn" class="btn btn-primary">Rotate Right </button> <button id="upVerbtn" class="btn btn-primary">Flip Vertical</button> <button id="downVerbtn" class="btn btn-primary">Flip Horizontal</button> <button id='invertbtn' class='btn btn-primary'>Invert</button> </br> 
+  </br>
+</br>
+<center><button id="intializingSystem" class="btn btn-primary">Initializing System</button>
+        </div>
+
+    </div>
+ 
+    <div class="col-sm-4 other">        
+      <h1> <u>Next Steps </u> </h1>
+      <button id="startSystem" class="btn btn-primary">Start System</button> </br>
+    </br>
+    <button id="takePicture" class="btn btn-primary">Take Picture</button> </br>
+</br>
+  <button id="saveXray" class="btn btn-primary">Save Xray</button> </br>
+</br>
+<button id="stop" class="btn btn-primary">Stop</button> </br>
+</br>
+</br>
+<h2> <u>Image Processing </u> </h2>
+<div class="col-lg-6">
+  <div class="col-lg-6">
+    <label for="contrast:0">Contrast:0</label>
+    <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0" onchange="changeEverything()">
+     <label for="Brightness:0">Brightness:0</label>
+    <input id="brightness" name="brightness" type="range" min="-20" max="20" value="0" onchange="changeEverything()">
+    
+    </br>
+  <table>
+    
+    <nav class="filters">
+    <button id="undobtn" onclick="undo()"class="btn btn-success"> UNDO</button>
+    <button id="setbtn" onclick="set()" class="btn btn-success"> SET</button>
+</nav>
+    
+    </td> <td><button id="exitPage"class="btn btn-primary">Exit Page </center> </br></button>
+	<a href='../index.html'>back to index</a> </td> </br>
+</table>
+
+  </div>
+  <div class="col-lg-6">
+
+  </div>
+      </div>
+  </div>
+</div>
+<p>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+$(function() {
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+
+  /* Enable Cross Origin Image Editing */
+  var img = new Image();
+  img.crossOrigin = '';
+  img.src = 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Dental_X-ray_70.JPG';
+
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0, img.width, img.height);
+   
+    //brightnessbtn.onclick = increaseBrightness;
+  invertbtn.onclick=invert;
+  upVerbtn.onclick=upVer;
+  downVerbtn.onclick=downVer;
+  rightHorbtn.onclick=rightHor;
+  leftHorbtn.onclick=leftHor;
+   // resetbtn.onclick = resetImage;
+    
+   
+  }
+  
+  
+});
+
+       
+function increaseBrightness() {
+  Caman('#canvas', function() {
+    this.brightness(30).render();
+  })
+}
+
+function resetImage() {
+  Caman('#canvas', function() {
+    this.reset();
+    this.render();
+  });
+};
+
+function invert(){
+    Caman('#canvas', function() {
+  this.invert().render();
+  });
+ }
+
+	function upVer() {
+  Caman('#canvas', function() {
+    this.rotate(180);
+    this.render();
+  });
+};function downVer() {
+  Caman('#canvas', function() {
+    this.rotate(-180);
+    this.render();
+  });
+};function rightHor() {
+  Caman('#canvas', function() {
+    this.rotate(-90);
+    this.render();
+  });
+};function leftHor() {
+  Caman('#canvas', function() {
+    this.rotate(90);
+    this.render();
+  });
+};
+
+
+function changeEverything() {
+  Caman('#canvas', function() {
+    this.reset();
+    var b = Number(brightness.value);
+    var c = Number(contrast.value);
+    this.brightness(b);
+    this.contrast(c);
+    this.render();
+  })
+}//takes contrast and brightness and adds it to the page
+
+
+function undo() {
+
+  brightness.value = 0;
+  contrast.value = 0;
+  changeEverything();
+};
+
+function set() {
+  alert("this is your final adjustment to your photo")
+  
+  changeEverything()
+  
+  setbtn.disabled = true
+  undobtn.disabled = true
+  brightness.disabled = true
+  contrast.disabled = true
+  
+}
+</h4></code></pre></div>
+<p class="p">Demo by Monty Shokeen. <a href="http://www.sitepoint.com/manipulating-images-dynamically-camanjs" target="_blank">See article</a>.</p> 
+
+</script>
+</body>
+</html>
+  <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+
+</html>
