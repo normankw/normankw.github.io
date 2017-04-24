@@ -1,0 +1,133 @@
+<html>
+<button onclick='document.getElementById("code").style.display = "block"'>
+Show Code
+</button>
+
+<div id="code" style="display: none;"><pre><code title="The code for this project"><h4>
+    setInterval(function(){
+    	  // case : wet
+        if(triger.value == 1){
+        if(mois.value == 0){
+          console.log("======turning off the value because the soil is wet");
+          valve.off();
+        } // case: dry
+         else if(mois.value == 1){
+            console.log("======turning on the valve beacuse the soil is dry");
+           		valve.on();
+                // after 2 seconds, turn off the value so it only waters for 2 seconds
+            	setTimeout(function() {
+           			console.log("======turning off the valve because i watered for two seconds already");
+           			valve.off();
+                }, 2 * 1000);
+          }
+        }
+    }, 5000);
+	
+	  mois.on("press", function() {
+    console.log( "moisture  low" );
+    //valve.on();
+  });
+
+  mois.on("release", function() {
+    console.log( "moisture high" );
+    //valve.off();
+  });
+  
+	button.on("hold", function() {
+    console.log( "valve held" );
+  });
+
+  button.on("press", function() {
+    console.log( "valve pressed" );
+    valve.on();
+  });
+
+  button.on("release", function() {
+    console.log( "valve released" );
+    valve.off();
+  });
+
+</h4></code></pre></div>
+ <br>
+ <a href='../index.html'>back to index</a><br><br>
+</html><script>
+const Raspi = require('raspi-io');
+const five = require('johnny-five');
+const board = new five.Board({
+  io: new Raspi(),
+    repl: false
+
+});
+
+
+function onReady() {
+  
+  
+  var valve = new five.Led('GPIO12');
+  
+    setInterval(function(){
+    	  // case : wet
+        if(triger.value == 1){
+        if(mois.value == 0){
+          console.log("======turning off the value because the soil is wet");
+          valve.off();
+        } // case: dry
+         else if(mois.value == 1){
+            console.log("======turning on the valve beacuse the soil is dry");
+           		valve.on();
+                // after 2 seconds, turn off the value so it only waters for 2 seconds
+            	setTimeout(function() {
+           			console.log("======turning off the valve because i watered for two seconds already");
+           			valve.off();
+                }, 2 * 1000);
+          }
+        }
+    }, 5000);
+
+
+  //for swich to turn on the sencor
+  var triger = new five.Button({
+    pin: "GPIO19"
+  });
+  //var on = true;
+  triger.on("up", function() {
+    console.log( "sencor off" );
+  });
+
+  triger.on("down", function() {
+    console.log( "sencor on" );
+  });
+
+   
+var mois = new five.Button("GPIO23");
+
+  mois.on("press", function() {
+    console.log( "moisture  low" );
+    //valve.on();
+  });
+
+  mois.on("release", function() {
+    console.log( "moisture high" );
+    //valve.off();
+  });
+  
+  // Create a new `button` hardware instance.
+  var button = new five.Button("GPIO4");
+  button.on("hold", function() {
+    console.log( "valve held" );
+  });
+
+  button.on("press", function() {
+    console.log( "valve pressed" );
+    valve.on();
+  });
+
+  button.on("release", function() {
+    console.log( "valve released" );
+    valve.off();
+  });
+
+}
+
+board.on('ready', onReady);
+</script>

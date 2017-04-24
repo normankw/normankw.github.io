@@ -1,18 +1,18 @@
 <html>
 <script>
-function isPalindrome(x) {  //start
-  if(typeof x=="number")return 'error';//getting the number to show 
-   if(-1==x)return 'error';//checks for a -1  
-  if(" "==x)return 'error';// checks for spaces`
-  if(','==x)return 'error';// checks for ',' 
-  x = x.replace(/\s/g,'');//to replace the spaces
-	x = x.replace(",",""); // get rid of , and spaces 
-  for(var k = 0; k <= x.length;k++) if (x[x.length-k-1] != x[k]) return false;// goes throw the words and checks see if it is right
-  return true;
-  
-  
-}
+function isPalindrome(x) { //start
+    if (typeof x == "number") return 'error'; //getting the number to show 
+    if (-1 == x) return 'error'; //checks for a -1  
+    if (" " == x) return 'error'; // checks for spaces`
+    if (',' == x) return 'error'; // checks for ',' 
+    x = x.replace(/\s/g, ''); //to replace the spaces
+    x = x.replace(",", ""); // get rid of , and spaces 
+    for (var k = 0; k <= x.length; k++)
+        if (x[x.length - k - 1] != x[k]) return false; // goes throw the words and checks see if it is right
+    return true;
 
+
+}
 
 document.write("<h1>Checking all test cases!</h1>")
 check("maneater", false);
