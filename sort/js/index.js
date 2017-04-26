@@ -10,7 +10,7 @@ $(function() {
   img.onload = function() {
     canvas.width = img.width;
     canvas.height = img.height;
-    ctx.drawImage(img, 0, 0, img.width, img.height);
+    ctx.drawImage(img, 0, 0, img.height * .5, img.width * .5);
    
     //brightnessbtn.onclick = increaseBrightness;
   invertbtn.onclick=invert;

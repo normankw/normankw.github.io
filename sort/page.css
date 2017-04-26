@@ -1,9 +1,24 @@
-<style>
-.background{
-color:green-red;
+body {
+	background-color: lightblue;
 }
-a:hover-background{
-background-color:gray;
+background{
+	color:green;
 }
-
-</style>
+outset {
+	border-style: outset;
+	border-left: 10px;
+	border-right:10px;
+	}
+ul{
+	 list-style-type: circle;
+}	
+a:hover {
+   
+   text-decoration: underline;
+}
+a:active {
+    text-decoration: underline;
+}
+div {
+  background-color: green;
+}
