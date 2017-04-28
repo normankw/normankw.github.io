@@ -1,6 +1,6 @@
 <html>
 <link rel="stylesheet"  href="./page.css">
-<h1>bubbleSort</h1>
+<h1>Bubble Sort</h1>
 
 <p>
 
@@ -40,9 +40,9 @@ for(var c=0; c < order.length; c++){
  <br>
 <a href='../index.html'>back to index</a><br><br>
  
- Original: 5,10,4,8,2,3
+ Original Array w/ Numbers: 5,10,4,8,2,3
  <br>
- Original: ab,ac,aab,a,aac,aaab,Ab,ABA,COOKIE
+ Original Array w/ Words: ab,ac,aab,a,aac,aaab,Ab,ABA,COOKIE
  <br>
 <script>
 
@@ -50,7 +50,7 @@ var unsorted = [5, 10, 4, 8, 2, 3]; //you can put any numbers here.
 
 var sorted = bubbleSort(unsorted);
 
-document.write("Sorted: ");
+document.write("Sorted Array w/ Numbers: ");
 for (var i = 0; i < unsorted.length; i++) { // rotate the numbers
     toPage(unsorted[i]);
 }
@@ -58,8 +58,8 @@ for (var i = 0; i < unsorted.length; i++) { // rotate the numbers
 
 var order = ['ab', 'ac', 'aab', 'a', 'aac', 'aaab', 'Ab', 'ABA', "COOKIE"];
 var change = true;
-
-document.write("Sorted: ");
+document.write("<br>");
+document.write("Sorted Array w/ Words: ");
 
 while (change) {
     change = false;

@@ -1,12 +1,13 @@
 <html>
 <link rel="stylesheet"  href="./page.css">
-<h2>BopIT</h2>
-If the timer gets to 0 Game Over.
+<h2>Bop-It</h2>
+Click the correct button before the timer reaches 0.  If the timer gets to 0 or you pick the wrong command, then it's game over.
 <body>
-    <p id="scorer">0</p>
-    <p id='highscorer'>0</p>
-     <p id='chooser'></p>
-	<p id='timerleft'>10</p>
+    Current Score : <p id="scorer">0</p>
+	<br>
+	<b>Command</b>
+    <b> <p id='chooser'></p> <b>
+	Time Left : <p id='timerleft'>10</p>
    
 
     <button onclick="start()">start game</button>
@@ -127,7 +128,7 @@ Show Code
                 if (timeleft <= 0) {
                     gameover();
                 }
-            }, 1000);
+            }, 250);
 		pickchoose();
         }
     }
@@ -160,7 +161,7 @@ Show Code
             if (timeleft <= 0) {
                 gameover();
             }
-        }, 1000);
+        }, 250);
 
     }
 
